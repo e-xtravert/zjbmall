@@ -1,9 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../../../vuecli/tabbar/src/views/home/Home";
-import Category from "../../../vuecli/tabbar/src/views/category/Category";
-import Cart from "../../../vuecli/tabbar/src/views/cart/Cart";
-import Profile from "../../../vuecli/tabbar/src/views/profile/Profile";
+import Home from "../views/home/Home";
+import Category from "../views/category/Category";
+import Cart from "../views/cart/Cart";
+import Profile from "../views/profile/Profile";
+import Detail from "../views/detail/Detail";
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,10 @@ const routes = [
   {
     path:'/profile',
     component: Profile
+  },
+  {
+    path:'/detail/:iid',
+    component: Detail
   }
 
 ]

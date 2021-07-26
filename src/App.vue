@@ -1,23 +1,27 @@
 <template>
   <div id="app">
-    <home></home>
-    <main-tab-bar/>
+    <main-tab-bar></main-tab-bar>
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import MainTabBar from "./components/content/mainTabBar/MainTabBar";
-import Home from "./views/home/Home";
 
 export default {
   name: 'App',
   components: {
-    Home,
     MainTabBar,
   }
 }
 </script>
 
 <style>
+
 @import "./assets/css/base.css";
+#app {
+  position: relative;
+}
 </style>
