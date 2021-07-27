@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="nav-bar">
     <navbar>
       <div slot="left" @click="backClick">
         <img src="~assets/img/common/back.svg" alt="" class="img"></div>
@@ -36,12 +36,16 @@ export default {
     },
     itemClick(index) {
       this.currentIndex = index
+      this.$emit('titleClick',index)
     }
   }
 }
 </script>
 
 <style scoped>
+.nav-bar {
+  background-color: #fff;
+}
 .title {
   display: flex;
 }

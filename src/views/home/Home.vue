@@ -61,6 +61,7 @@ export default {
       currentType: 'pop',
       tabOffsetSop: 549,
       isFIxed: false,
+      pullUpLoad: true,
       goods: {
         'pop': {page: 0, list: []},
         'new': {page: 0, list: []},

@@ -17,7 +17,7 @@ export default {
     },
     pullUpLoad: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   data() {
@@ -47,15 +47,15 @@ export default {
         this.$emit('pullingUp')
         this.scroll.finishPullUp()
         //老师这个方法放到了getGoods里面，但是我那儿报错，放这儿了
-        setTimeout(() => {
+       this.$nextTick(() => {
           this.scroll && this.scroll.refresh();
-        }, 200);
+        });
       })
-    },2000);
+    },1000);
   },
   methods: {
     scrollTo(x, y, time) {
-      this.scroll && this.scroll.scrollTo(0, 0, 500)
+      this.scroll && this.scroll.scrollTo(x, y, time)
       //这个里面参数必须填，而且home里面使用的时候time参数和这里面的不能设置相同
       }
     },
