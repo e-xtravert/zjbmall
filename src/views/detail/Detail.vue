@@ -1,6 +1,5 @@
 <template>
   <div id="detail">
-    <div >{{$store.state.cartList}}</div>
     <detail-nav-bar class="detail-nav"
                     ref="nav"
                     @titleClick="titleClick"/>
@@ -72,6 +71,7 @@ export default {
       this.shopInfo = new Shop(data.shopInfo)
       // console.log(this.shopInfo);
       this.goodsInfo = data.detailInfo
+      // console.log(this.goods)
       this.paramsInfo = new GoodsParam(data.itemParams.info, data.itemParams.rule)
       //展示评论信息
       if (data.rate.list) {
@@ -169,13 +169,19 @@ export default {
       //商品展示
       const product = {}
       product.image = this.topImages[0];
-      product.title = this.goodsInfo.title;
+      product.title = this.goods.title;
       product.desc = this.goodsInfo.desc;
-      product.price = this.goodsInfo.nowPrice;
+      product.price = this.goods.nowPrice;
       product.iid = this.iid
+      // console.log(this.goods.nowPrice);
       //获取商品
       // this.$store.commit('addCart',product)
-      this.$store.dispatch('addCart',product)
+      //在vuex中做了某项操作就要使用promise
+      this.$store.dispatch('addCart', product).then(res => {
+        // console.log(res);
+        // this.$toast.show(res, 2000)
+        this.$toast.methods.show(res, 1500)
+      })
     }
   }
 }

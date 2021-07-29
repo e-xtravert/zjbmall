@@ -31,6 +31,8 @@ export default {
       //监听滚动事件
       this.scroll = new BScroll(this.$refs.wrapper, {
         probeType: this.probeType,
+        observeDOM: true,
+        observeImage: true,
         click: true,
         tap: true,
         pullUpLoad: this.pullUpLoad,

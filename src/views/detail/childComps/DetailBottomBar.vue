@@ -18,17 +18,34 @@
       <div class="cart" @click="addToCart">加入购物车</div>
       <div class="buy">购买</div>
     </div>
+<!--    <dialog @closeDialog="close" v-if="showDialog"></dialog>-->
   </div>
 </template>
 
 <script>
+import Dialog from "./Dialog";
 export default {
   name: "NavButtonBar",
+  // data() {
+  //   return {
+  //     showDialog: false
+  //   }
+  // },
   methods: {
     addToCart() {
+      alert('添加成功，请前往购物车查看')
       this.$emit('addCart')
-    }
-  }
+    },
+    // show() {
+    //   this.showDialog = true
+    // },
+    // close() {
+    //   this.showDialog = false
+    // }
+  },
+  // components: {
+  //   Dialog
+  // }
 }
 </script>
 
