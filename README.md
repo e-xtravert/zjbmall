@@ -1,4 +1,4 @@
-# zjbmall1
+# zjbmall
 
 ## Project setup
 ```
