@@ -1,4 +1,4 @@
-# zjbmall
+# mall
 
 ## Project setup
 ```
